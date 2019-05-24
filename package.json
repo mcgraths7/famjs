@@ -1,10 +1,16 @@
 {
   "name": "@mcgraths7/famjs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package which adds functional versions of common array methods",
   "main": "index.js",
   "repository": "https://github.com/mcgraths7/famjs",
   "author": "Steven McGrath",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "keywords": [
+    "functional",
+    "functional programming",
+    "array",
+    "array methods"
+  ]
 }
