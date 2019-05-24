@@ -1,5 +1,5 @@
 {
-  "name": "famjs",
+  "name": "@mcgraths7/famjs",
   "version": "1.0.0",
   "description": "A package which overrides common array methods with functional equivalents",
   "main": "index.js",
