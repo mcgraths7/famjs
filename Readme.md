@@ -36,8 +36,18 @@ Works the same way as Array.prototype.splice; you can pass in itemsToSpliceIn as
 
 Works like Array.prototype.unshift. The items are added to the front of the array in the same way they are passed in as arguments
 
+## Installation
+
+To install, run
+
+npm install --save @mcgraths7/famjs
+
+OR
+
+yarn add @mcgraths7/famjs
+
 ## Usage
 
 Simply require the file at the top of any file which you need to use these in
 
-require('famjs');
+require('@mcgraths7/famjs');
