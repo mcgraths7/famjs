@@ -1,30 +1,47 @@
 module.exports = [
   (Array.prototype.famFill = function(value, startIndex, endIndex) {
     let newArray = [...this];
-    return newArray.fill(value, startIndex, endIndex);
+    let filledArray = newArray.map(item => {
+      if (
+        newArray.indexOf(item) >= startIndex &&
+        newArray.indexOf(item) <= endIndex
+      ) {
+        return (item = value);
+      } else {
+        return item;
+      }
+    });
+    return filledArray;
   }),
   (Array.prototype.famPop = function() {
-    let newArray = [...this];
-    const poppedItem = newArray.pop();
+    const newArray = [...this];
+    const len = newArray.length;
+    const poppedArray = newArray.slice(0, len - 1);
+    const poppedItem = newArray[len - 1];
     return {
       arr: newArray,
       item: poppedItem,
     };
   }),
   (Array.prototype.famPush = function(element) {
-    let newArray = [...this];
-    let newLength = newArray.push(element);
-    return newArray;
+    const newArray = [...this];
+    return newArray.concat(element);
   }),
   (Array.prototype.famReverse = function() {
-    let newArray = [...this];
-    return newArray.reverse();
+    const newArray = [...this];
+    let reversedArray = [];
+    for (let i = newArray.length - 1; i >= 0; i--) {
+      reversedArray = reversedArray.concat(newArray[i]);
+    }
+    return reversedArray;
   }),
   (Array.prototype.famShift = function() {
-    let newArray = [...this];
-    let shiftedItem = newArray.shift();
+    const newArray = [...this];
+    const len = newArray.length;
+    const shiftedArray = newArray.slice(1, len);
+    const shiftedItem = newArray[0];
     return {
-      arr: newArray,
+      arr: shiftedArray,
       item: shiftedItem,
     };
   }),
@@ -45,14 +62,7 @@ module.exports = [
   (Array.prototype.famUnshift = function(itemsToAdd) {
     let newArray = [...this];
     const argArray = [].concat(...Array.from(arguments)).famReverse();
-    if (argArray.length > 0) {
-      argArray.forEach(arg => {
-        newArray.unshift(arg);
-      });
-    }
-    return {
-      arr: newArray,
-      len: newArray.length,
-    };
+    const unshiftedArray = newArray.concat(argArray);
+    return unshiftedArray;
   }),
 ];
