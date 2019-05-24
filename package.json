@@ -1,6 +1,6 @@
 {
   "name": "@mcgraths7/famjs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A package which adds functional versions of common array methods",
   "main": "index.js",
   "repository": "https://github.com/mcgraths7/famjs",

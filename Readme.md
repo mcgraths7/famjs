@@ -10,26 +10,43 @@ Works the same way as Array.prototype.fill, but returns a new array, leaving the
 
 #### Example
 
-const arr1 = [1, 2, 3, 4];
-const arr2 = arr1.famFill(3, 0, 3);
+`const arr1 = [1, 2, 3, 4];`
+
+`const arr2 = arr1.famFill(3, 0, 3);`
 
 expect arr1 = [1, 2, 3, 4]
+
 expect arr2 = [3, 3, 3, 3]
 
-### Array.prototype.famPop();
+### Array.prototype.famPop(numberToPop = 1);
 
-Works the same way as Array.prototype.pop(), except returns an object with both the popped item, and the new array, leaving the source untouched.
+Works the same way as Array.prototype.pop(), except returns an object with both the popped items, and the new array, leaving the source untouched.
 
-These are accessible via "arr" and "item" properties
+Accepts an argument for the number of elements to remove. Will default to 1 if no argument provided.
+
+These are accessible via "arr" and "items" properties
 
 #### Example
 
-const arr1 = [1, 2, 3, 4];
-const arr2 = arr1.famPop();
+`const arr1 = [1, 2, 3, 4];`
+
+`const arr2 = arr1.famPop();`
 
 expect arr1 = [1, 2, 3, 4]
+
 expect arr2.arr = [1, 2, 3]
-expect arr2.item = 4
+
+expect arr2.items = [4]
+
+`const arr1 = [1, 2, 3, 4];`
+
+`const arr2 = arr1.famPop(2);`
+
+expect arr1 = [1, 2, 3, 4]
+
+expect arr2.arr = [1, 2]
+
+expect arr2.items = [3, 4]
 
 ### Array.prototype.famPush(element);
 
@@ -37,27 +54,33 @@ Works the same way as Array.prototype.push, but returns a new array with the ite
 
 #### Example
 
-const arr1 = [1, 2, 3, 4];
-const arr2 = arr1.famPush(5, 6, 7, 8);
-const arr3 = arr1.famPush([5, 6, 7, 8]);
+`const arr1 = [1, 2, 3, 4];`
+`const arr2 = arr1.famPush(5, 6, 7, 8);`
+`const arr3 = arr1.famPush([5, 6, 7, 8]);`
 
 expect arr1 = [1, 2, 3, 4]
+
 expect arr2 = [1, 2, 3, 4, 5, 6, 7 ,8]
+
 expect arr3 = [1, 2, 3, 4, 5, 6, 7, 8]
 
-### Array.prototype.famShift();
+### Array.prototype.famShift(numberToShift = 1);
 
 Works the same way as Array.prototype.shift(), but returns a new array, as well as the shifted item, leaving the source array untouched.
+
+Accepts number of items as an argument. Defaults to 1 if none provided.
 
 These are accessible via the "arr" and "item" properties.
 
 #### Example
 
-const arr1 = [1, 2, 3, 4];
-const arr2 = arr1.famShift();
+`const arr1 = [1, 2, 3, 4];`
+`const arr2 = arr1.famShift();`
 
 expect arr1 = [1, 2, 3, 4]
+
 expect arr2.arr = [2, 3, 4]
+
 expect arr2.item = 1
 
 ### Array.prototype.famSort(sortFunction);
@@ -66,12 +89,12 @@ Works the same way as Array.prototype.sort, but returns a new array, sorted acco
 
 #### Example
 
-const arr1 = [4, 2, 5, 1];
-const arr2 = arr1.famSort((a, b) => {
-  return a - b
-});
+`const arr1 = [4, 2, 5, 1];`
+
+`const arr2 = arr1.famSort((a, b) => { return a - b });`
 
 expect arr1 = [4, 2, 5, 1]
+
 expect arr2 = [1, 2, 4, 5]
 
 ### Array.prototype.famSplice(startIndex, deleteCount, itemsToSpliceIn);
@@ -80,10 +103,12 @@ Works the same way as Array.prototype.splice; you can pass in itemsToSpliceIn as
 
 #### Example
 
-const arr1 = ["Jan", "Feb", "March", "April", "June"];
-const arr2 = arr1.famSplice(4, 1, "May");
+`const arr1 = ["Jan", "Feb", "March", "April", "June"];`
+
+`const arr2 = arr1.famSplice(4, 1, "May");`
 
 expect arr1 = ["Jan", "Feb", "March", "April", "June"]
+
 expect arr2 = ["Jan", "Feb", "March", "April", "May", "June"]
 
 ### Array.prototype.famUnshift(itemsToAdd);
@@ -92,12 +117,16 @@ Works like Array.prototype.unshift. The items are added to the front of the arra
 
 #### Example
 
-const arr1 = [1, 2, 3, 4];
-const arr2 = arr1.famUnshift(5, 6, 7);
-const arr3 = arr1.famUnshift([5, 6, 7]);
+`const arr1 = [1, 2, 3, 4];`
+
+`const arr2 = arr1.famUnshift(5, 6, 7);`
+
+`const arr3 = arr1.famUnshift([5, 6, 7]);`
 
 expect arr1 = [1, 2, 3, 4]
+
 expect arr2 = [5, 6, 7, 1, 2, 3, 4]
+
 expect arr3 = [5, 6, 7, 1, 2, 3, 4]
 
 ## Installation

@@ -13,14 +13,14 @@ module.exports = [
     });
     return filledArray;
   }),
-  (Array.prototype.famPop = function() {
+  (Array.prototype.famPop = function(numberToPop = 1) {
     const newArray = [...this];
     const len = newArray.length;
-    const poppedArray = newArray.slice(0, len - 1);
-    const poppedItem = newArray[len - 1];
+    const poppedArray = newArray.slice(0, len - numberToPop);
+    const poppedItem = newArray.slice(len - numberToPop, len);
     return {
       arr: newArray,
-      item: poppedItem,
+      items: poppedItem,
     };
   }),
   (Array.prototype.famPush = function(element) {
@@ -35,14 +35,14 @@ module.exports = [
     }
     return reversedArray;
   }),
-  (Array.prototype.famShift = function() {
+  (Array.prototype.famShift = function(numberToShift = 1) {
     const newArray = [...this];
     const len = newArray.length;
-    const shiftedArray = newArray.slice(1, len);
-    const shiftedItem = newArray[0];
+    const shiftedArray = newArray.slice(numberToShift, len);
+    const shiftedItems = newArray.slice(0, numberToShift);
     return {
       arr: shiftedArray,
-      item: shiftedItem,
+      items: shiftedItems,
     };
   }),
   (Array.prototype.famSort = function(sortFunction) {
@@ -56,6 +56,7 @@ module.exports = [
   ) {
     let newArray = [...this];
     const itemArgs = [].concat(...Array.from(arguments)).slice(2);
+
     newArray.splice(startIndex, deleteCount, ...itemArgs);
     return newArray;
   }),
