@@ -1,0 +1,10 @@
+{
+  "name": "famjs",
+  "version": "1.0.0",
+  "description": "A package which overrides common array methods with functional equivalents",
+  "main": "index.js",
+  "repository": "https://github.com/mcgraths7/famjs",
+  "author": "Steven McGrath",
+  "license": "MIT",
+  "private": false
+}
